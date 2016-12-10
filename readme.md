@@ -2,7 +2,7 @@
 
 Requirements
 ============
-- PHP version >= 5.4 and <7
+- PHP version >= 5.4 and <7 ![why]( since PHP v7 removed mysql functions it won't work )
 - MYSQL >=3.4
 
 Installation
@@ -20,17 +20,17 @@ Solely developed by https://github.com/sejanH
 Contact
 =======
 
-Email: sejan840@yahoo.com
-Twitter: https://twitter.com/sejanH
+- Email: sejan840@yahoo.com
+- Twitter: https://twitter.com/sejanH
 
 Used Plugins
 ============
-. Material Desined Bootstrap(http://mdbootstrap.com)
-. Bootstrap.js v3.3.6 (http://getbootstrap.com)
-jQuery v1.10.2
-jQuery v3.1.1
-jQuery v1.8.3
-mdb.js (http://mdbootstrap.com/)
+- Material Desined Bootstrap(http://mdbootstrap.com)
+- Bootstrap.js v3.3.6 (http://getbootstrap.com)
+- jQuery v1.10.2
+- jQuery v3.1.1
+- jQuery v1.8.3
+- mdb.js (http://mdbootstrap.com/)
 
 Preview
 ========
