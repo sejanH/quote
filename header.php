@@ -62,6 +62,7 @@ if(isset($_SESSION['user'])=="")
 	 
 <style type="text/css">
  .navbar{
+  min-height: 40px;
   font-family: Play;
   border-radius: 0px;
   margin: 0;
