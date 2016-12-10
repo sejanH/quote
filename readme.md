@@ -25,8 +25,8 @@ Twitter: https://twitter.com/sejanH
 
 Used Plugins
 ============
-Material Desined Bootstrap(http://mdbootstrap.com)
-Bootstrap.js v3.3.6 (http://getbootstrap.com)
+. Material Desined Bootstrap(http://mdbootstrap.com)
+. Bootstrap.js v3.3.6 (http://getbootstrap.com)
 jQuery v1.10.2
 jQuery v3.1.1
 jQuery v1.8.3
