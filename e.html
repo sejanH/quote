@@ -1,0 +1,178 @@
+<?php
+
+require_once 'auth/dbconn.php';
+session_start();
+if(isset($_SESSION['user']))
+{
+	$res=mysql_query("SELECT * FROM userinf WHERE uid=".$_SESSION['user']);
+	$un=mysql_fetch_array($res);
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="google-site-verification" content="CoH5oUgEYulxPjyw_lkayFlglDnHVgjlkpF97KBN1u0">
+<meta name="description" content="A personal site that contains some quotes of famous people that might be enough to inspire our way of life">
+<meta name="robots" content="index, nofollow">
+
+	<title>Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8_unicode_ci" />
+	<meta property="og:image" content="http://i.imgur.com/ZesI3AT.jpg"/>
+	<meta property="og:url" content="http://sejan.xyz" />
+	<!--fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Play:700,400' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+	<!--fonts-->
+	
+	<link rel="icon" href="img/favicon.ico"/>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/mdb.css" / >
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/mdb_style.css" /> 
+	<link rel="stylesheet" href="css/parallax.css"/ >
+
+	<!--scripts-->
+	<!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+	<script src="js/smoothPageScroll.js"></script>
+	 
+<style type="text/css">
+ .navbar-brand{
+	margin-left: 0px;
+}
+ 
+</style>
+
+</head>
+	
+<body>
+	
+<a name="Top"></a>
+
+<!-- 
+<nav class="navbar navbar-inverse">
+  <div class="">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+<a class="navbar-brand" href="index.php" >
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="200px" height="80px" viewBox="0 0 280 140" enable-background="new 0 0 200 100" xml:space="preserve">
+	 
+<ellipse fill="none" stroke="cyan" stroke-width="8" stroke-miterlimit="10" stroke-dasharray="5,5" cx="120" cy="80" rx="16" ry="16">
+		<animateTransform attributeName="transform"
+			attributeType="XML"
+			type="rotate"
+			from="0 120 80"
+			to="360 120 80"
+			dur="8s"
+			repeatCount="indefinite"
+		 />
+	</ellipse>
+<text transform="matrix(1 0 0 1 74.4126 90.04)"><tspan x="-75" y="7" fill="cyan" font-family="Courier" font-size="80">Qu tes</tspan></text>
+</svg>
+</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="add.php">Add New Schedule</a></li>
+        <li class=" "><a href="update.php">Update Schedule</a></li> 
+        <li class="disabled"><a href="#">View History</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right"><?php
+      if(isset($_SESSION['user'])=="")
+      {?>  <li><a href="#" id="myBtn2"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#" id="myBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <?php 
+      }
+      else{?>
+      <li class="active"><a><?php echo 'Hello '.$_SESSION['user'];?></a></li>
+<li><a id="logout" href="logout.php" title="Logout"><span class="glyphicon glyphicon-off"></span></a></li>
+    <?php  }
+    ?>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<header>
+	<!--Navbar-->
+<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar" style="padding: 0px;">
+
+    <!-- Collapse button-->
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <div class="container">
+        <!--Collapse content-->
+        <div class="collapse navbar-toggleable-xs" id="collapseEx">
+            <!--Navbar Brand-->
+		<a class="navbar-brand" href="index.php" >
+<img src="img/logo.svg"/> <span class="sr-only">(current)</span>
+		</a>
+            <!--Links-->
+            <ul class="nav navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: cyan;">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: cyan;">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: cyan;">About</a>
+                </li>
+         </ul>
+              
+                <ul class="nav navbar-nav" style="float: right;">
+            <?php
+      if(isset($_SESSION['user'])=="")
+      {?>  
+  		<li class="nav-item">
+  			<a class="nav-link" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+  		</li>
+        <li class="nav-item">
+        	<a class="nav-link" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
+        <?php 
+      }
+      else{?>
+    	<li class="active">
+    		<a class="nav-link"><?php echo 'Hello '.$_SESSION['user'];?></a>
+    	</li>
+		<li class="nav-item">
+		<a class="nav-link" id="logout" href="logout.php" title="Logout"><span class="glyphicon glyphicon-off"></span></a>
+		</li>
+    <?php  }
+    ?>
+    
+      </ul>
+        </div>
+        <!--Collapse content-->
+
+    </div>
+
+</nav>
+<!--Navbar-->
+</header>

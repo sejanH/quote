@@ -1,0 +1,3 @@
+#### PERSISTENT CONTENT ####
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*$ index.php [L,QSA]

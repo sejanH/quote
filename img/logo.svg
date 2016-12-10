@@ -1,0 +1,15 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="80px" height="35px" viewBox="0 0 280 140" enable-background="new 0 0 200 100" xml:space="preserve">
+	 
+<ellipse fill="none" stroke="cyan" stroke-width="8" stroke-miterlimit="10" stroke-dasharray="5,5" cx="70" cy="40" rx="16" ry="16">
+		<animateTransform attributeName="transform"
+			attributeType="XML"
+			type="rotate"
+			from="0 70 40"
+			to="360 70 40"
+			dur="8s"
+			repeatCount="indefinite"
+		 />
+	</ellipse>
+<text transform="matrix(1 0 0 1 74.4126 90.04)"><tspan x="-110px" y="-35px" fill="cyan" font-family="Courier" font-size="70">Qu tes</tspan></text>
+</svg>
