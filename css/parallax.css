@@ -132,14 +132,14 @@ color: black;
 	color: #252525; 	
 	font-weight: bold; }
 #slide1,#slide3,#slide5,#slide7{
-	background:url('/quote/img/bg.svg') 30% 0 no-repeat fixed;
+	background:url('/img/bg.svg') 30% 0 no-repeat fixed;
 	background-size: cover;
 	margin: 0;
 	padding: 100px 0;
 }
 
 #slide2,#slide4, #slide6{
-	background:url('/quote/img/bg2.svg') 30% 0 no-repeat fixed;
+	background:url('/img/bg2.svg') 30% 0 no-repeat fixed;
 	background-size: cover;
 	margin: 0 auto;
 	overflow: hidden;
