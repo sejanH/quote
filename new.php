@@ -1,22 +1,25 @@
 <?php
+//header files
+require_once('header.php'); 
+require_once 'auth/login.php';
+require_once 'auth/register.php';
+//header files end
 
-require_once 'auth/dbconn.php';
-session_start();
 if(isset($_SESSION['user']))
 {
-	$res=mysql_query("SELECT * FROM userinf WHERE uid=".$_SESSION['userid']);
-	$un=mysql_fetch_array($res);
+	$res=mysqli_query($conn,"SELECT * FROM userinf WHERE uid=".$_SESSION['userid']);
+	$un=mysqli_fetch_array($res);
 	$_SESSION["me"]= $un;
 
 
 if(isset($_POST['btn-submit']))
 {
- $quote = mysql_real_escape_string($_POST['quoteText']);
- $source = mysql_real_escape_string($_POST['source']);
+ $quote = mysqli_real_escape_string($conn, $_POST['quoteText']);
+ $source = mysqli_real_escape_string($conn, $_POST['source']);
  $uname= $un['username'];
  $quote=mb_convert_encoding($quote, "HTML-ENTITIES", 'UTF-8');
-
-$res=mysql_query("INSERT INTO userposts(username,postbody,quoteby) VALUES('$uname','$quote','$source')");
+ $quote = strip_tags($quote);
+$res=mysqli_query($conn,"INSERT INTO userposts(username,postbody,quoteby) VALUES('$uname','$quote','$source')");
 //$row=mysql_fetch_array($res);
  //$count=mysql_num_rows($res);
  if($res)
@@ -36,6 +39,16 @@ $res=mysql_query("INSERT INTO userposts(username,postbody,quoteby) VALUES('$unam
  }
 }
 
+if (isset($_POST['btn-delete'])) {
+	$qid = mysqli_real_escape_string($conn, $_POST['qid']);
+	$query = "delete from userposts where quoteId=$qid";
+	if(mysqli_query($conn,$query))
+	{
+		echo "<script>alert('$query');</script>";
+	}
+	//
+}
+
 }
 else
 {
@@ -46,66 +59,84 @@ else
 
 }
 ?>
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Add New Quote</title>
-<?php include('applayout.php'); ?> 
-
-	<div class="col-md-6" >
+<style type="text/css">
+.myPosts{
+	background: rgba(0,0,0,0.1);
+	//color: ghostwhite;
+}
+</style>
+<div>
+<center>
+<div class="col-md-5">
 <form method="post">
-<table align="center" class="table-responsive table">
+<table class="table table-md" style="width: 100% !important">
 <tr>
-<th style="color:hotpink;" ><b>Quote</b></th>
-<td><textarea class="form-control" rows="10" type="text" name="quoteText" placeholder="Enter the Quote" required ></textarea>
+<th style="color:hotpink;"><b>Quote</b></th>
+<td ><textarea class="form-control textarea md-textarea" rows="6" type="text" name="quoteText" placeholder="Enter the Quote" required ></textarea>
 </td>
 </tr>
 <tr>
 <th style="color:hotpink;"><b>Quote From</b></th>
-<td><input class="form-control" style="width:100%;" type="text" name="source" placeholder="Quote Source" required /></td>
+<td ><input class="form-control" type="text" name="source" placeholder="Quote Source" required /></td>
 </tr>
 <tr>
 <td></td>
-<td><button class="btn btn-primary btn-block" type="submit" name="btn-submit">Add</button></td>
+<td><button class="btn btn-lg btn-mdb btn-block overlay hm-green-slight" type="submit" name="btn-submit">Add</button></td>
 </tr>
-
 </table>
 </form>
 </div>
-<div class="col-md-5">
+</center>
+
+<div class="col-md-7 myPosts">
 <?php
 $me= $un['username'];
 echo "Posts made by user (", $me ,"):", "<br/><br/>";
-$after=mysql_query("SELECT postbody,quoteby FROM userposts where username='$me' ");
+$after=mysqli_query($conn,"SELECT quoteId,postbody,quoteby FROM userposts where username='$me' ");
 
 $arr = Array();
 $arr2 = Array();
-$arr3 = Array();
-while($row= mysql_fetch_array($after))
+$arr0 = Array();
+$i=1;
+while($row= mysqli_fetch_array($after))
 {
-	$arr[]= $row['postbody'];
-	$arr2[]= $row['quoteby'];
-}
+	?>
+	<form method="post">
+	<input type="hidden" name="qid" value="<?php echo $row['quoteId'];?>"></input>
 
-for($i=0;$i< $count=mysql_num_rows($after);$i++)
-{if($i%2==0){?>
-<b><?php echo $i+1," ) ",$arr[$i],"<br/>";?></b>
-	<i><?php
-	echo $arr2[$i],"<hr/>";?></i><?php
-}
-else{?>
-<div style="background-color: rgba(0,0,0,0.2);">
-	<b><?php echo $i+1," ) ",$arr[$i],"<br/>";?></b>
-	<i><?php
-	echo $arr2[$i],"<hr/>";?></i>
-	</div><?php
-}
+	<table>
+	<tr>
+	<b><?php echo $i," ) ",$row['postbody'],"<br/>";?></b>
+	</tr>
+	<tr>
+	<td width="80%">
+	<i><?php echo $row['quoteby'],"<hr/>";?></i>
+	</td>
+	<td>
+	<button class='btn btn-sm btn-outline-default' name="btn-edit">Edit</button>
+	</td>
+	<td>
+	<button class='btn btn-sm btn-outline-danger waves-effect' name="btn-delete">Delete</button>
+	</td>
+	</tr>
+	</table>
+		</form>
+		<?php
+		$i++;
 }
 ?>
 </div>
 
+</div>
+
+<br/><br/>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#logout").click(function(){
+      $("#logoutmodal").modal();
+    });
+  });
+</script>
+<?php mysqli_close($conn);?>
 </body>
 </html>

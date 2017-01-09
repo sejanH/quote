@@ -1,4 +1,8 @@
 <?php require('header.php');
+
+require_once 'auth/login.php';
+require_once 'auth/register.php';
+    
  ?>
  
 <div class="containers">
@@ -8,7 +12,7 @@
 	
 	
 <hr/><br/><br/>
-<div class="col-md-2 col-sm-2"><script type="text/javascript">
+<div class="col-md-2 col-sm-2"><!--script type="text/javascript">
 	atOptions = {
 		'key' : '7e2680f74647dd590b585c9f66be2a51',
 		'format' : 'iframe',
@@ -17,7 +21,7 @@
 		'params' : {}
 	};
 	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bnhtml.com/invoke.js"></scr' + 'ipt>');
-</script></div>
+</script--></div>
 		
 <div class="col-sm-6 col-md-6">
 <p>This is our Contact page.<br/>Under construction</p>

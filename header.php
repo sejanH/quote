@@ -1,7 +1,5 @@
 <?php
-
 require_once 'auth/dbconn.php';
-
 
 if(isset($_SESSION['user'])=="")
   {
@@ -17,8 +15,6 @@ if(isset($_SESSION['user'])=="")
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-<meta name="google-site-verification" content="CoH5oUgEYulxPjyw_lkayFlglDnHVgjlkpF97KBN1u0">
 <meta name="description" content="A personal site that contains some quotes of famous people that might be enough to inspire our way of life">
 <meta name="robots" content="index, nofollow">
 
@@ -75,6 +71,24 @@ if(isset($_SESSION['user'])=="")
  }
  
 </style>
+<!-- Modal -->
+<div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Logout?</h4>
+      </div>
+      <div class="modal-body">
+      Are You Sure You Want To Logout?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No! No!! Abort Abort</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='auth/logout.php'">Yes I am fucking sure</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </head>
 	
@@ -125,10 +139,10 @@ if(isset($_SESSION['user'])=="")
       {
         ?>  
       <li class="nav-item">
-        <a class="nav-link" href="auth/register.php" id="myBtn2" style="color: hotpink;"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        <a class="nav-link" href="#register" id="myBtn2" style="color: hotpink;"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
       </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" id="myBtn" style="color: hotpink; "><span class="glyphicon glyphicon-log-in"></span> Login</a>
+          <a class="nav-link" href="#login" id="myBtn" style="color: hotpink; "><span class="glyphicon glyphicon-log-in"></span> Login</a>
         </li>
         <?php 
       }
@@ -137,7 +151,7 @@ if(isset($_SESSION['user'])=="")
         <a class="nav-link" style="color: hotpink;"><?php echo 'Hello '.$_SESSION['user'];?></a>
       </li>
     <li class="nav-item">
-    <a style="color: hotpink;" class="nav-link" id="logout" href="auth/logout.php" title="Logout">  <span class="glyphicon glyphicon-off"></span> </a>
+    <a style="color: hotpink;" class="nav-link" data-toggle="modal" id="logout" href="#logout" title="Logout">  <span class="glyphicon glyphicon-off"></span> </a>
     </li>
     <?php  }
     ?>

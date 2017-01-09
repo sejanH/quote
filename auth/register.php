@@ -5,13 +5,15 @@ require_once 'dbconn.php';
 
 if(isset($_POST['btn-signup']))
 {
- $username = mysql_real_escape_string($_POST['username']);
- $pass = mysql_real_escape_string($_POST['pass']);
- $email = mysql_real_escape_string($_POST['email']);
- $FullName = mysql_real_escape_string($_POST['fname']);
-$res=mysql_query("INSERT INTO userinf(username,pass,email,FullName) VALUES('$username','$pass','$email','$FullName')");
+ $username = mysqli_real_escape_string($conn, $_POST['username']);
+ $pass = mysqli_real_escape_string($conn, $_POST['pass']);
+ $pass = md5($pass);
+ $email = mysqli_real_escape_string($conn, $_POST['email']);
+ $FullName = mysqli_real_escape_string($conn, $_POST['fname']);
+$res=mysqli_query($conn, "INSERT INTO userinf(username,pass,email,FullName) VALUES('$username','$pass','$email','$FullName')");
 //$row=mysql_fetch_array($res);
  //$count=mysql_num_rows($res);
+
  if($res)
  {
   ?>
@@ -21,9 +23,7 @@ $res=mysql_query("INSERT INTO userinf(username,pass,email,FullName) VALUES('$use
  }
  else
  {
-  ?>
-        <script>alert('Error while registering you...');</script>
-        <?php
+    echo  '<script>alert("Error while registering you...\n' .mysql_errnor(). ' ");</script>';
  }
 }
 ?>
@@ -47,6 +47,7 @@ $res=mysql_query("INSERT INTO userinf(username,pass,email,FullName) VALUES('$use
  <div class="form-group">
   <label><span class="glyphicon glyphicon-eye-open"></span> Password</label>
 <input class="form-control" type="password" name="pass" placeholder="Your Password" required />
+</div>
 <div class="form-group">
               <label><span class="glyphicon glyphicon-envelope"></span> Email</label>
  <input class="form-control" type="email" name="email" placeholder="Your Email" />

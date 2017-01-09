@@ -3,12 +3,14 @@ require_once 'dbconn.php';
 
 if(isset($_POST['btn-login']))
 {
- $username = mysql_real_escape_string($_POST['username']);
- $pass = mysql_real_escape_string($_POST['pass']);
+
+ $username = mysqli_real_escape_string($conn, $_POST['username']);
+ $pass = mysqli_real_escape_string($conn, $_POST['pass']);
+ $pass = md5($pass);
  $query = "SELECT * FROM userinf WHERE username='$username' AND pass='$pass'";
- $res= @mysql_query($query) or die(mysql_error());
- $row=mysql_fetch_array($res);
- $count=mysql_num_rows($res);
+ $res= mysqli_query($conn, $query) or die(mysqli_error());
+ $row=mysqli_fetch_array($res);
+ $count=mysqli_num_rows($res);
  if($count == 1)
  {
  	//session_start();
@@ -18,14 +20,20 @@ if(isset($_POST['btn-login']))
  }
  else
  {
-  ?>
-        <script>alert('Wrong Username or Password\nTry again');</script>
-        <?php
+    echo '
+    <center>
+      <div class="container alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+         <strong>Wrong Login details. Check your <i>Username</i>&nbsp;&nbsp;and <i>Password</i>&nbsp;&nbsp;then Try again</strong>
+      </div>
+    </center>';
  }
  
 }
 ?>
 <center>
+
+<!--login-->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     

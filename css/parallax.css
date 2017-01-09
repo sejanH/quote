@@ -7,21 +7,75 @@ Author: Samuel Dalusung
 /*= GENERAL STYLING
 --------------------------------------------------------*/
 
-
-.clear { clear: both; }
-a.lpanel { float: left; color: #e1e1e1; font-size: 12px; font-family:"Wellfleet"; text-decoration: none; margin: 7px 11px; }
-a.rpanel { float: right; color: #e1e1e1;  font-size: 12px; font-family:"Wellfleet"; text-decoration: none; margin: 7px 11px; }
-
-a.lpanel:hover{ color: #fff; }
-a.rpanel:hover{ color: #fff; }
-/*= Width 640px or more
+/*= Width less than 768px
 --------------------------------------------------------*/
-@media (max-width: 640px) {
+@media (max-width: 768px) {
 	
 	h1 { 
     font-family:"Arvo";
 	font-weight:normal;
 	font-size: 35px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+   font-family:"Arvo";
+   font-weight: normal;
+   font-size: 26px;
+   text-align: center;
+   margin: 0;
+	padding: 0;
+}
+
+h3 {
+   font-family: Oswald;
+   font-weight: normal;
+   font-size: 22px;
+   text-align: center;
+   margin: 5px 0;
+	padding: 0;
+	z-index: 1;
+	position: relative;
+}
+
+
+	#slide1, #slide2, #slide3, #slide4, #slide5, #slide6{ 
+	//width: 100%;
+	padding: 60px 0;
+	background: rgba(0,0,0,0.6);
+	border-bottom: 4px dotted lightgreen;
+
+	}
+
+	.quotes { 
+
+font-weight: bold;
+color: black;
+  text-align: left;
+	padding: 20px 0 10px 0 ;
+  font-family: Lato;
+}
+ .author_name_gray { font-family:"Vollkorn";  margin: 25px;}  
+ .quotes_container { width: 95% ; margin: 0 auto;  }
+
+.card{
+	height: 30%;
+}
+
+}
+
+
+/*= device width 768px or higher
+--------------------------------------------------------*/
+@media(min-width: 768px){
+
+
+h1 { 
+    font-family:"Arvo";
+	font-weight:normal;
+	font-size: 55px;
 	text-align: center;
 	margin: 0;
 	padding: 0;
@@ -40,66 +94,6 @@ h3 {
    font-family: Oswald;
    font-weight: normal;
    font-size: 24px;
-   text-align: center;
-   margin: 5px 0;
-	padding: 0;
-	z-index: 1;
-	position: relative;
-}
-
-
-	#slide1, #slide2, #slide3, #slide4, #slide5, #slide6{ 
-	//width: 100%;
-	padding: 60px 0;
-	background: rgba(0,0,0,0.6);
-	border-bottom: 4px dotted lightgreen;
-
-	}
-
-	.quotes { 
-font-weight: bold;
-color: black;
-  text-align: left;
-  margin: 50px auto;
-  font-family: Lato;
-}
-.author_name_white { font-family:"Vollkorn";  margin: 40px 0 0 45px; color: aqua; font-size: 20px; }  
- .author_name_gray { font-family:"Vollkorn";  margin: 40px 0 0 45px; color: aqua; font-size: 20px; }  
- .quotes_container { width: 85% ; margin: 0 auto;  }
-
-
-}
-
-
-/*= QUOTES AND SOME ELEMENTS
-when width is less than 640px
---------------------------------------------------------*/
-@media(min-width: 640px){
-
-
-h1 { 
-    font-family:"Arvo";
-	font-weight:normal;
-	font-size: 55px;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-}
-
-h2 {
-   font-family:"Arvo";
-   font-weight: normal;
-   font-size: 40px;
-   text-align: center;
-   margin: 0;
-	padding: 0;
-}
-
-h3 {
-   font-family: Oswald;
-   font-weight: normal;
-   font-size: 26px;
-   text-align: center;
    margin: 5px 0;
 	padding: 0;
 	z-index: 1;
@@ -108,17 +102,15 @@ h3 {
 
 
 .quotes {   
-color: black;
- font-family: 'Play', serif;
-   font-weight: normal;
-   font-size: 30px;
-  text-align: left;
-  margin: 50px auto;
+	color: black;
+	font-family: 'Play', serif;
+	font-weight: normal;
+	text-align: left;
+	padding: 30px 0 0 0 ;
+
 }
-   
- .author_name_white { font-family:"Vollkorn";  margin: 50px 0 0 55px; color: #252525; font-size: 20px; }  
- .author_name_gray { font-family:"Vollkorn";  margin: 50px 0 0 55px; color: #151515; font-size: 20px; }  
- .quotes_container { width: 85% ; margin: 0 auto; }
+ .author_name_gray { font-family:"Vollkorn";  margin: 50px 0 0 50px; color: #151515;}  
+ .quotes_container { width: 95% ; margin: 0 auto; }
 
 
 
@@ -148,7 +140,3 @@ color: black;
 
 }
 
-
-
-/*= FOOTER 
---------------------------------------------------------*/

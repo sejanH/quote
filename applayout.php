@@ -4,13 +4,13 @@
 	<link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Play:700,400' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/style.css" / >
-	<link rel="stylesheet" href="css/app.css" />
 	<link rel="icon" href="img/favicon.ico"/>
+	<link rel="stylesheet" href="css/bootstrap.css" >
+	<link rel="stylesheet" href="css/mdb.css" >
+	<link rel="stylesheet" href="css/style.css" >
 	<style type="text/css">
 .col-md-5{
-	background: url('css/images/triangles.svg');
+	background: url('img/triangles.svg');
 	background-size: 100%;
 }
 .table>tbody>tr>td,
@@ -30,8 +30,8 @@ a:hover{
 	</style>
 
 </head>
-<body class="row">
-<div id="header" class="row containers" style="background-color: #252525;">
+<body>
+<div id="header" class=" containers" style="background-color: #252525;">
 	<div class="contents">
 		<div class="title">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
