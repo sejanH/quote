@@ -46,7 +46,7 @@ body{
 <?php //session_start();
  if(isset($_POST['btn-submit']))
  {
- 	$site_url= mysql_real_escape_string($_POST['url']);
+ 	$site_url= mysqli_real_escape_string($conn, $_POST['url']);
  }
 //session_destroy();
  ?>

@@ -1,6 +1,5 @@
 <?php
 require_once 'auth/dbconn.php';
-
 if(isset($_SESSION['user'])=="")
   {
     session_start();
@@ -9,7 +8,6 @@ if(isset($_SESSION['user'])=="")
   $GLOBALS['s'] =basename($_SERVER['SCRIPT_NAME'],".php");
 
 ?>
-
 
 <html lang="en">
 <head>
@@ -84,7 +82,7 @@ if(isset($_SESSION['user'])=="")
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">No! No!! Abort Abort</button>
-        <button type="button" class="btn btn-primary" onclick="window.location.href='auth/logout.php'">Yes I am fucking sure</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='auth/logout.php'">Yes I am sure</button>
       </div>
     </div>
   </div>
@@ -131,6 +129,11 @@ if(isset($_SESSION['user'])=="")
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php" style="color: hotpink;">Contact</a>
                 </li>
+				<?php if(ucwords($s)=="About"){?>
+				<li class="nav-item"><a class="nav-link" href="http://about.sejan.xyz" target="_blank" style="color: hotpink;">Open portfolio in new tab</a></li>
+				<?php
+				}
+				?>
          </ul>
               
                 <ul class="nav navbar-nav" style="float: right;">

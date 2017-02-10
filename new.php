@@ -48,6 +48,10 @@ if (isset($_POST['btn-delete'])) {
 	}
 	//
 }
+if(isset($_POST['btn-edit']))
+{
+	echo '<script>alert("Sorry didn\'t get the chance to write code for this button");</script>';
+}
 
 }
 else
@@ -84,7 +88,19 @@ else
 <td><button class="btn btn-lg btn-mdb btn-block overlay hm-green-slight" type="submit" name="btn-submit">Add</button></td>
 </tr>
 </table>
-</form>
+</form><br>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'd0cdc3b5a195110617834bf46ff32d41',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bnserving.com/invoke.js"></scr' + 'ipt>');
+</script>
+<script type='text/javascript' src='//pl8212800.puserving.com/11/9d/4e/119d4e8c441ed56f1a8a2dff84da1882.js'></script>
+<script type='text/javascript' src='//pl8212799.puserving.com/dd/87/e0/dd87e0d92f96702bf7cba66aa4d3d810.js'></script>
 </div>
 </center>
 

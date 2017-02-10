@@ -6,10 +6,56 @@ Author: Samuel Dalusung
 
 /*= GENERAL STYLING
 --------------------------------------------------------*/
+/*= width less than 500px
+--------------------------------------------------------*/
+@media(max-width: 500px){
+	h1 { 
+    	font-family:"Arvo";
+	font-weight:normal;
+	font-size: 25px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+   font-family:"Arvo";
+   font-weight: normal;
+   font-size: 16px;
+   text-align: center;
+   margin: 0;
+	padding: 0;
+}
+
+h3 {
+   font-family: Oswald;
+   font-weight: normal;
+   font-size: 12px;
+   text-align: center;
+   margin: 5px 0;
+	padding: 0;
+	z-index: 1;
+	position: relative;
+}
+
+	.quotes { 
+		font-weight: normal;
+		color: black;
+ 		text-align: left;
+		padding: 20px 0 10px 0 ;
+		font-family: Lato;
+}
+ .author_name_gray { font-family:"Vollkorn";  margin: 20px;}  
+ .quotes_container { width: 95% ; margin: 0 auto;  }
+
+.card{
+	height: 30%;
+}
+}
 
 /*= Width less than 768px
 --------------------------------------------------------*/
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	
 	h1 { 
     font-family:"Arvo";
@@ -23,7 +69,7 @@ Author: Samuel Dalusung
 h2 {
    font-family:"Arvo";
    font-weight: normal;
-   font-size: 26px;
+   font-size: 24px;
    text-align: center;
    margin: 0;
 	padding: 0;
@@ -32,7 +78,7 @@ h2 {
 h3 {
    font-family: Oswald;
    font-weight: normal;
-   font-size: 22px;
+   font-size: 20px;
    text-align: center;
    margin: 5px 0;
 	padding: 0;

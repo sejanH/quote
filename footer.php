@@ -14,6 +14,12 @@
     });
   });
 </script>
+
+<script type="text/javascript">
+var uid = '18222';
+var wid = '241180';
+</script>
+<script type="text/javascript" src="//cdn.popcash.net/pop.js"></script>
 <?php mysqli_close($conn);?>
 </body>
 </html>

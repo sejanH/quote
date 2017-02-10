@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "test";
+$servername = "mysql7.000webhost.com";
+$username = "a4163525_sejan";
+$password = "faucet30";
+$db = "a4163525_faucet";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$db);
 
@@ -12,24 +12,3 @@ if (!$conn)
   die("Failed to connect to MySQL: " . mysql_error());
   }
   
-// $db = mysql_select_db('test');
-// if(!$db)
-// die("Database selescetion failed" . mysql_errno());
-
-
-/*
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "test";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
-    */
