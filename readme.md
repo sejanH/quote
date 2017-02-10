@@ -3,7 +3,7 @@
 
 Requirements
 ============
-- PHP version >= 5.4 and <7 -( since PHP v7 removed mysql functions it won't work )
+- PHP version >= 5.4
 - MYSQL >=3.4
 
 Installation
