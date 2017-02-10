@@ -1,0 +1,69 @@
+-- Host: localhost
+-- Server version: 5.5.15
+-- PHP Version: 5.3.8
+
+--
+-- Database: `test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userinf`
+--
+
+CREATE TABLE IF NOT EXISTS `userinf` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) COLLATE latin1_general_ci NOT NULL,
+  `pass` varchar(20) COLLATE latin1_general_ci NOT NULL,
+  `email` char(100) COLLATE latin1_general_ci DEFAULT NULL,
+  `FullName` char(150) COLLATE latin1_general_ci DEFAULT NULL,
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `userinf`
+--
+
+INSERT INTO `userinf` (`uid`, `username`, `pass`, `email`, `FullName`) VALUES
+(1, 'sejan', 'xxxx', NULL, NULL),
+(2, 'sejan2', 'xxxx', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userposts`
+--
+
+CREATE TABLE IF NOT EXISTS `userposts` (
+  `quoteId` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) COLLATE latin1_general_ci NOT NULL,
+  `postbody` varchar(500) COLLATE latin1_general_ci NOT NULL,
+  `quoteby` varchar(200) COLLATE latin1_general_ci NOT NULL,
+  `postedat` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`quoteId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=REDUNDANT AUTO_INCREMENT=18 ;
+
+--
+-- Dumping data for table `userposts`
+--
+
+INSERT INTO `userposts` (`quoteId`, `username`, `postbody`, `quoteby`, `postedat`) VALUES
+(1, 'sejan', 'Do, or do not. There is no "try".', '- Yoda, from Star Wars', '2016-07-05 08:29:50'),
+(2, 'sejan', '&#2488;&#2453;&#2494;&#2482; &#2540;&#2463;&#2494;&#2527; &#2456;&#2497;&#2478; &#2469;&#2503;&#2453;&#2503; &#2441;&#2464;&#2494;&#2480; &#2458;&#2503;&#2527;&#2503; &#2488;&#2453;&#2494;&#2482; &#2540;&#2463;&#2494; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468; &#2460;&#2503;&#2455;&#2503; &#2469;&#2494;&#2453;&#2494; &#2437;&#2472;&#2503;&#2453; &#2488;&#2489;&#2460;&#2404;', '- Sir Mominul Haque Sejan', '2016-07-27 15:03:38'),
+(3, 'sejan', 'The quieter you become, the more you can hear.', ' &#8213; Ram Dass', '0000-00-00 00:00:00'),
+(4, 'sejan', 'The closer you look, the less you see', '- From movie "Now You See Me"', '0000-00-00 00:00:00'),
+(5, 'sejan', 'The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart', '- Helen Keller', '2016-07-27 15:08:21'),
+(6, 'sejan2', 'You either die a hero, or live long enough to see yourself to become a villain', '- Harvey Dent from movie "The Dark Knight"', '0000-00-00 00:00:00'),
+(7, 'sejan', 'Oh yes, the past can hurt. But you can either run from it, or learn from it', '- Rafiki, from The Lion King', '2016-07-27 15:03:25'),
+(8, 'sejan', 'You can''t live your life for other people. You''ve got to do what''s right for you, even if it hurts some people you love', '- from The Notebook', '2016-07-27 15:02:54'),
+(9, 'sejan', 'To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life', '- from The Secret Life of Walter Mitty', '2016-07-27 15:03:07'),
+(10, 'sejan', 'To find something, anything, a great truth or a lost pair of glasses, you must first believe there will be some advantage in finding it', '- from All the King''s Men', '0000-00-00 00:00:00'),
+(11, 'sejan', 'After a while, you learn to ignore the names people call you and just trust who you are', '- from Shrek', '2016-07-27 15:05:57'),
+(13, 'sejan', 'Beauty is when you can appreciate yourself. When you love yourself, that''s when you''re most beautiful', '- Zoe Kravitz', '2016-07-27 15:22:04'),
+(14, 'sejan', 'Keep looking up! I learn from the past, dream about the future and look up. There''s nothing like a beautiful sunset to end a healthy day', '- Rachel Boston', '2016-07-27 15:22:21'),
+(15, 'sejan', 'Childhood means simplicity. Look at the world with the child''s eye - it is very beautiful', '- Kailash Satyarthi', '2016-07-27 15:22:39'),
+(16, 'sejan', 'I look at Messi, and he makes me laugh. A beautiful footballer who is still like a kid. A world superstar, but still a kid. Innocent, you know. He just plays', '- Johan Cruyff', '2016-07-27 15:23:06'),
+(17, 'sejan', 'Democracy is beautiful in theory; in practice it is a fallacy', '- Benito Mussolini', '2016-07-27 15:23:26');
