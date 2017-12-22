@@ -35,7 +35,7 @@ Used Plugins
 
 Preview
 ========
-- [visit live](http://sejan.xyz)
+- [visit live](http://sejan.000webhostapp.com/)
 ![Home](https://cloud.githubusercontent.com/assets/16546092/21075623/b3a8e9d6-bf40-11e6-96d8-a79a69382263.png)
 ![HomeMobile](https://cloud.githubusercontent.com/assets/16546092/21075624/b3d483ca-bf40-11e6-94b4-59a66cae944c.png)
 ![AddNewQuote](https://cloud.githubusercontent.com/assets/16546092/21075625/b3f69b5e-bf40-11e6-93d4-12fa4c54aab2.png)
